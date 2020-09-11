@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <ul id="namelist">
+            
+        </ul>
+        
+        <input id="navn" type="text">
+                <button id="btn">Add Name</button>
+                <button id="btn1">Remove Head</button>
+                <button id="btn2">Remove Tale</button>
+    </body>
+    
+    <script>
+        var list = ["Mari","Pelle", "Matt", "Benjamin"];
+        document.getElementById("btn").addEventListener("click", addname);
+        document.getElementById("btn1").addEventListener("click", rmvhead);
+        document.getElementById("btn2").addEventListener("click", rmvtale);
+        
+         function makelist (array){
+             let listarray = array.map( name => `<li>${name}</li>`);
+             document.getElementById("namelist").innerHTML =listarray.join("");
+             
+             
+         }
+         makelist(list);
+         
+         function addname() {
+             var input = document.getElementById("navn").value;
+             list.push(input)
+             makelist(list)
+         }
+         
+         function rmvhead() {
+             list.shift()
+             makelist(list)
+         }
+         
+         function rmvtale() {
+             list.pop()
+             makelist(list)
+         }
+         
+         
+        
+        
+        
+    </script>
+</html>

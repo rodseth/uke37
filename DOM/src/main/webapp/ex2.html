@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+     <style>
+        .myDiv{
+            width: 125px;
+            height: 25px;
+            background-color: yellow;
+            margin: 1px;
+        }
+    </style>
+    <body>
+        <div id="1" class="myDiv">1</div>
+        <div id="2" class="myDiv">2</div>
+        
+        <div id="outer">
+            <div id="3">3</div>
+            <div id="4">4</div>
+            <div id="5">5</div>
+            <div id="6">6</div>
+            <div id="7">7</div>
+            <div id="8">8</div>
+            <div id="9">9</div>
+            <div id="10">10</div>
+            <div id="11">11</div>
+            <div id="12">12</div>
+            <h1>Du trykker på en div med dette id:</h1>
+            <p id="outputtext">
+                <p>
+            
+        </div>
+        <script>
+            let x1 =document.getElementById("1");
+            x1.onclick = (x => x1.innerHTML = "Hi from: " + x1.id);
+            
+            let x2 =document.getElementById("2");
+            x2.onclick = (x => x2.innerHTML = "Hi from: " + x2.id);
+            
+            const outerDiv = document.getElementById("outer");
+            outerDiv.addEventListener('click', function(event) {
+                event.preventDefault();
+                console.log(this.getAttribute('id'))
+                document.getElementById("outputtext").innerHTML = event.target.getAttribute('id')
+            });
+        </script>
+    </body>
+</html>
